@@ -9,8 +9,16 @@ RSpec.describe Prct06 do
 end
 
 RSpec.describe Prct06 do
+
 	before :each do
-		@alimento = Prct06::Alimento.new("Nombre", 10, 10, 10)
+		@Nombre = "Huevo frito"
+		@Proteinas = 14.1
+		@Glucidos = 0.0
+		@Lipidos = 19.5
+		@valor_energetico = 231.9
+		@to_s = "#{@Nombre}, Proteinas: #{@Proteinas}, Glucidos: #{@Glucidos}, Lipidos: #{@Lipidos}. Valor Energético: #{@valor_energetico}"
+		
+		@alimento = Prct06::Alimento.new(@Nombre, @Proteinas, @Glucidos, @Lipidos)
 	end
 	
 	it "has 'nombre' attribute" do
@@ -30,10 +38,10 @@ RSpec.describe Prct06 do
 	end
 	
 	it "has 'calcular' method and working correctly" do
-		expect(@alimento.calcular).to eq(10*4 + 10*4 + 10*9)
+		expect(@alimento.calcular).to eq(@valor_energetico)
 	end
 	
 	it "has 'to_s' method" do
-		expect(@alimento.to_s).to eq("Nombre, Proteinas: 10, Glucidos: 10, Lipidos: 10. Valor Energético: 170")
+		expect(@alimento.to_s).to eq(@to_s)
 	end
 end
