@@ -1,8 +1,7 @@
-# Prct06
+# Práctica 6 LPP
+## Felipe Álvarez Avaria
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/prct06`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Esta gema para Ruby trata de calcular el valor energético de los alimentos.
 
 ## Installation
 
@@ -32,7 +31,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/prct06.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ULL-ESIT-LPP-1718/tdd-alu0100969535.
 
 ## License
 
