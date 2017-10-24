@@ -10,7 +10,7 @@ end
 
 RSpec.describe Prct06 do
 	before :each do
-		@alimento = Prct06::Alimento.new("Nombre", 10, 10)
+		@alimento = Prct06::Alimento.new("Nombre", 10, 10, 10)
 	end
 	
 	it "has 'nombre' attribute" do
