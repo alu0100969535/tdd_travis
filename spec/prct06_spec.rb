@@ -10,6 +10,10 @@ end
 
 RSpec.describe Prct06 do
 	before :each do
-		@alimento = Alimento
+		@alimento = Prct06::Alimento.new("Nombre")
+	end
+	
+	it "has 'name' attribute" do
+		expect(@alimento.name).not_to be nil
 	end
 end
