@@ -10,5 +10,9 @@ module Prct06
 			@glucidos = glucidos
 			@lipidos = lipidos
 		end
+		
+		def calcular()
+			@proteinas*4 + @glucidos*4 + @lipidos*9
+		end
 	end
 end
