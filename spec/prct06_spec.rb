@@ -32,4 +32,8 @@ RSpec.describe Prct06 do
 	it "has 'calcular' method and working correctly" do
 		expect(@alimento.calcular).to eq(10*4 + 10*4 + 10*9)
 	end
+	
+	it "has 'to_s' method" do
+		expect(@alimento.to_s).to eq("Nombre, Proteinas: 10, Glucidos: 10, Lipidos: 10. Valor Energético: 170")
+	end
 end
