@@ -24,4 +24,8 @@ RSpec.describe Prct06 do
 	it "has 'glucidos' attribute" do
 		expect(@alimento.glucidos).not_to be nil
 	end
+	
+	it "has 'lipidos' attribute" do
+		expect(@alimento.lipidos).not_to be nil
+	end
 end
