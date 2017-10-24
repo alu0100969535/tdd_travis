@@ -28,4 +28,8 @@ RSpec.describe Prct06 do
 	it "has 'lipidos' attribute" do
 		expect(@alimento.lipidos).not_to be nil
 	end
+	
+	it "has 'calcular' method and working correctly" do
+		expect(@alimento.calcular).to eq(10*4 + 10*4 + 10*9)
+	end
 end
