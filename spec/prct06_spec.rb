@@ -1,14 +1,14 @@
 require "spec_helper"
 require "prct06"
 
-RSpec.describe Prct06 do
+RSpec.describe "Bundler automatic tests" do
 	it "has a version number" do
 		expect(Prct06::VERSION).not_to be nil
 	end
 	
 end
 
-RSpec.describe Prct06 do
+RSpec.describe "User made tests" do
 
 	before :each do
 		@Nombre = "Huevo frito"
@@ -21,27 +21,32 @@ RSpec.describe Prct06 do
 		@alimento = Prct06::Alimento.new(@Nombre, @Proteinas, @Glucidos, @Lipidos)
 	end
 	
-	it "has 'nombre' attribute" do
-		expect(@alimento.nombre).not_to be nil
+	context "Iniciando el objeto Alimento" do
+		
+		it "has 'nombre' attribute" do
+			expect(@alimento.nombre).not_to be nil
+		end
+		
+		it "has 'proteinas' attribute" do
+			expect(@alimento.proteinas).not_to be nil
+		end
+		
+		it "has 'glucidos' attribute" do
+			expect(@alimento.glucidos).not_to be nil
+		end
+		
+		it "has 'lipidos' attribute" do
+			expect(@alimento.lipidos).not_to be nil
+		end
 	end
 	
-	it "has 'proteinas' attribute" do
-		expect(@alimento.proteinas).not_to be nil
-	end
-	
-	it "has 'glucidos' attribute" do
-		expect(@alimento.glucidos).not_to be nil
-	end
-	
-	it "has 'lipidos' attribute" do
-		expect(@alimento.lipidos).not_to be nil
-	end
-	
-	it "has 'calcular' method and working correctly" do
-		expect(@alimento.calcular).to eq(@valor_energetico)
-	end
-	
-	it "has 'to_s' method" do
-		expect(@alimento.to_s).to eq(@to_s)
+	context "Probando los métodos de cálculo" do
+		it "has 'calcular' method and working correctly" do
+			expect(@alimento.calcular).to eq(@valor_energetico)
+		end
+		
+		it "has 'to_s' method" do
+			expect(@alimento.to_s).to eq(@to_s)
+		end
 	end
 end
