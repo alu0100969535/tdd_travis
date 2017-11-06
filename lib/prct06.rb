@@ -11,12 +11,12 @@ module Prct06
 			@lipidos = lipidos
 		end
 		
-		def calcular()
+		def valorEnergetico()
 			@proteinas*4 + @glucidos*4 + @lipidos*9
 		end
 		
 		def to_s()
-			"#{@nombre}, Proteinas: #{@proteinas}, Glucidos: #{@glucidos}, Lipidos: #{@lipidos}. Valor Energético: #{self.calcular}"
+			"#{@nombre}, Proteinas: #{@proteinas}, Glucidos: #{@glucidos}, Lipidos: #{@lipidos}. Valor Energético: #{self.valorEnergetico}"
 		end
 	end
 end

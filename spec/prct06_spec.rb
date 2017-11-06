@@ -41,8 +41,8 @@ RSpec.describe "User made tests" do
 	end
 	
 	context "Probando los métodos de cálculo" do
-		it "has 'calcular' method and working correctly" do
-			expect(@alimento.calcular).to eq(@valor_energetico)
+		it "has 'valorEnergetico' method and working correctly" do
+			expect(@alimento.valorEnergetico).to eq(@valor_energetico)
 		end
 		
 		it "has 'to_s' method" do
@@ -68,7 +68,7 @@ RSpec.describe "User made tests" do
 			[0, 1, 2, 3, 4, 5].each do |x|
 				it "Alimento#{x+1}" do
 					alimentos = [@alimento1, @alimento2, @alimento3, @alimento4, @alimento5, @alimento6]
-					expect(alimentos[x].calcular).to eq(@Proteinas[x]*4 + @Glucidos[x]*4 + @Lipidos[x]*9)
+					expect(alimentos[x].valorEnergetico).to eq(@Proteinas[x]*4 + @Glucidos[x]*4 + @Lipidos[x]*9)
 				end
 			end
 		end
