@@ -12,5 +12,9 @@ RSpec.describe "List tests" do
 		it "Tiene el método 'head'" do
 			expect(@lista.head).not_to be nil
 		end
+		
+		it "Tiene el método 'tail'" do
+			expect(@lista.tail).not_to be nil
+		end
 	end
 end
