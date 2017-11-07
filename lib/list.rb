@@ -1,11 +1,11 @@
 Node = Struct.new(:value, :next, :prev)
 
 class Lista
-	attr_reader :head
+	attr_reader :head, :tail
 	
 	def initialize 
-		@head = Struct::Node.new(0,0,0)
-		#@next Node
+		@head = Node.new(0,nil,nil)
+		@tail = @head
 	end
 	
 	
