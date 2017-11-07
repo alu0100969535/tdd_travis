@@ -9,6 +9,10 @@ RSpec.describe "List tests" do
 			expect(@lista.class).to be Lista
 		end
 		
+		it "Tiene el método 'insert'"do
+			expect(@lista.insert(0)).not_to be nil
+		end
+		
 		it "Tiene el método 'head'" do
 			expect(@lista.head).not_to be nil
 		end
