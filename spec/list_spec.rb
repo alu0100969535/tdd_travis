@@ -20,5 +20,9 @@ RSpec.describe "List tests" do
 		it "Tiene el método 'tail'" do
 			expect(@lista.tail).not_to be nil
 		end
+		
+		it "Tiene el método 'to_s'" do
+			expect(@lista.to_s).to eq("[0]")
+		end
 	end
 end
