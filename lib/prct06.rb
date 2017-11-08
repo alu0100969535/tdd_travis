@@ -21,10 +21,13 @@ module Prct06
 	end
 	
 	class Grupo < Alimento
-		
+		attr_reader :nombreGrupo
+	
 		def initialize(nombre_grupo, nombre, proteinas, glucidos, lipidos)
+			@nombreGrupo = nombre_grupo
 			super(nombre,proteinas,glucidos,lipidos)
 		end
+		
 	end
 	
 end
