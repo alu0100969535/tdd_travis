@@ -13,16 +13,4 @@ class Lista
 		@head = Node.new(var,nil,antiguo)
 	end
 	
-	def to_s
-		nodo = @head
-		string = ""
-		begin
-			string += "[#{nodo.value}]"
-			if nodo != tail
-				string += " -> "
-			end
-		end while nodo != tail
-		return string
-	end
-	
 end
