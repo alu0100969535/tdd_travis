@@ -19,4 +19,12 @@ module Prct06
 			"#{@nombre}, Proteinas: #{@proteinas}, Glucidos: #{@glucidos}, Lipidos: #{@lipidos}. Valor Energético: #{self.valorEnergetico}"
 		end
 	end
+	
+	class Grupo < Alimento
+		
+		def initialize(nombre_grupo, nombre, proteinas, glucidos, lipidos)
+		
+		end
+	end
+	
 end

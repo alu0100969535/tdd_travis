@@ -82,6 +82,6 @@ RSpec.describe "Test de la clase Grupo < Alimento" do
 	end
 	
 	it "iniciando objeto Grupo" do
-		expect(@grupo1.class).to be Grupo
+		expect(@grupo1.class).to be Prct06::Grupo
 	end	
 end
