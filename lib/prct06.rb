@@ -23,7 +23,7 @@ module Prct06
 	class Grupo < Alimento
 		
 		def initialize(nombre_grupo, nombre, proteinas, glucidos, lipidos)
-		
+			super(nombre,proteinas,glucidos,lipidos)
 		end
 	end
 	
