@@ -1,6 +1,7 @@
 require "spec_helper"
 require "prct06"
 
+
 RSpec.describe "Bundler automatic tests" do
 	it "has a version number" do
 		expect(Prct06::VERSION).not_to be nil
@@ -8,7 +9,7 @@ RSpec.describe "Bundler automatic tests" do
 	
 end
 
-RSpec.describe "User made tests" do
+RSpec.describe "Test de la clase Alimento" do
 
 	before :each do
 		@Nombre = "Huevo frito"
@@ -73,7 +74,14 @@ RSpec.describe "User made tests" do
 			end
 		end
 	end
-	
 end
 
-
+RSpec.describe "Test de la clase Grupo < Alimento" do
+	before :each do
+		@grupo1 = Prct06::Grupo.new("Huevos, lácteos y Helados","Huevo frito", 14.1, 0.0, 19.5)
+	end
+	
+	it "iniciando objeto Grupo" do
+		expect(@grupo1.class).to be Grupo
+	end	
+end
