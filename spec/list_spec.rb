@@ -5,6 +5,7 @@ RSpec.describe "List tests" do
 		before :each do
 			@lista = Lista.new();
 		end
+		
 		it "Instanciando un objeto lista" do
 			expect(@lista.class).to be Lista
 		end
@@ -31,6 +32,16 @@ RSpec.describe "List tests" do
 		
 		it "Tiene el método 'shift'" do
 			expect(@lista.shift).not_to be nil
+		end
+	end
+	context "Probando que los métodos funcionan" do
+		before :each do
+			@lista = Lista.new();
+		end
+		
+		it "El método insert puede insertar varios elementos" do
+			@lista.insert([1,2,3,4,5])
+			expect(@lista.size).to eq(5)
 		end
 	end
 end
