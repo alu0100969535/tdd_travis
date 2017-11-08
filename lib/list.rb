@@ -15,4 +15,10 @@ class Lista
 		@size += 1
 	end
 	
+	def pop
+		nuevo = @tail.next
+		@tail = nuevo
+		@size -= 1
+	end
+	
 end
