@@ -1,5 +1,6 @@
 require "spec_helper"
 require "prct06"
+require "list"
 
 
 RSpec.describe "Bundler automatic tests" do
@@ -104,4 +105,83 @@ RSpec.describe "Test de la clase Grupo < Alimento" do
 	it "Tiene el método nombreGrupo" do
 		expect(@grupo1.nombreGrupo).to eq("Huevos, lácteos y Helados")
 	end
+end
+
+RSpec.describe "Test de las listas de alimentos" do
+	
+	before :each do
+		@list = Lista.new()		
+	end
+	
+	it "Pruebas de los alimentos del grupo de 'Huevos, lácteos y Helados'" do
+		alimento1 = Prct06::Grupo.new("Huevos, lácteos y Helados","Huevo frito", 14.1, 0.0, 19.5)
+		alimento2 = Prct06::Grupo.new("Huevos, lácteos y Helados","Leche vaca", 3.3, 4.8, 3.2)
+		alimento3 = Prct06::Grupo.new("Huevos, lácteos y Helados","Yogurt", 3.8, 4.9, 3.8)
+		@list.insert([alimento1, alimento2, alimento3])
+		expect(@list.size).to eq(3)
+		expect(@list.head.class).to eq(Node)
+		expect(@list.head.value.class).to eq(Prct06::Grupo)
+	end
+	
+	it "Pruebas de los alimentos del grupo de 'Carnes y derivados'" do
+		alimento1 = Prct06::Grupo.new("Carnes y derivados","Cerdo", 21.5, 0.0, 6.3)
+		alimento2 = Prct06::Grupo.new("Carnes y derivados","Ternera", 21.1, 0.0, 3.1)
+		alimento3 = Prct06::Grupo.new("Carnes y derivados","Pollo", 20.6, 0.0, 5.6)
+		@list.insert([alimento1, alimento2, alimento3])
+		expect(@list.size).to eq(3)
+		expect(@list.head.class).to eq(Node)
+		expect(@list.head.value.class).to eq(Prct06::Grupo)
+	end
+	
+	it "Pruebas de los alimentos del grupo de 'Pescados y Mariscos'" do
+		alimento1 = Prct06::Grupo.new("Pescados y Mariscos","Bacalao", 17.7, 0.0, 0.4)
+		alimento2 = Prct06::Grupo.new("Pescados y Mariscos","Atún", 21.5, 0.0, 15.5)
+		alimento3 = Prct06::Grupo.new("Pescados y Mariscos","Salmón", 19.9, 0.0, 13.6)
+		@list.insert([alimento1, alimento2, alimento3])
+		expect(@list.size).to eq(3)
+		expect(@list.head.class).to eq(Node)
+		expect(@list.head.value.class).to eq(Prct06::Grupo)
+	end
+	
+	it "Pruebas de los alimentos del grupo de 'Alimentos grasos'" do
+		alimento1 = Prct06::Grupo.new("Alimentos grasos","Aceite de oliva", 0.0, 0.2, 99.6)
+		alimento2 = Prct06::Grupo.new("Alimentos grasos","Mantequilla", 0.7, 0.0, 83.2)
+		alimento3 = Prct06::Grupo.new("Alimentos grasos","Chocolate", 5.3, 47.0, 30.0)
+		@list.insert([alimento1, alimento2, alimento3])
+		expect(@list.size).to eq(3)
+		expect(@list.head.class).to eq(Node)
+		expect(@list.head.value.class).to eq(Prct06::Grupo)
+	end
+	
+	it "Pruebas de los alimentos del grupo de 'Alimentos ricos en carbohidratos'" do
+		alimento1 = Prct06::Grupo.new("Alimentos ricos en carbohidratos","Azúcar", 0.0, 99.8, 0.0)
+		alimento2 = Prct06::Grupo.new("Alimentos ricos en carbohidratos","Arroz", 6.8, 77.7, 0.6)
+		alimento3 = Prct06::Grupo.new("Alimentos ricos en carbohidratos","Lentejas", 23.5, 52.0, 1.4)
+		alimento4 = Prct06::Grupo.new("Alimentos ricos en carbohidratos","Papas", 2.0, 15.4, 0.1)
+		@list.insert([alimento1, alimento2, alimento3, alimento4])
+		expect(@list.size).to eq(4)
+		expect(@list.head.class).to eq(Node)
+		expect(@list.head.value.class).to eq(Prct06::Grupo)
+	end
+	
+	it "Pruebas de los alimentos del grupo de 'Verduras y Hortalizas'" do
+		alimento1 = Prct06::Grupo.new("Verduras y Hortalizas","Tomate", 1.0, 3.5, 0.2)
+		alimento2 = Prct06::Grupo.new("Verduras y Hortalizas","Cebolla", 1.3, 5.8, 0.3)
+		alimento3 = Prct06::Grupo.new("Verduras y Hortalizas","Calabaza", 1.1, 4.8, 0.1)
+		@list.insert([alimento1, alimento2, alimento3])
+		expect(@list.size).to eq(3)
+		expect(@list.head.class).to eq(Node)
+		expect(@list.head.value.class).to eq(Prct06::Grupo)
+	end
+	
+	it "Pruebas de los alimentos del grupo de 'Frutas'" do
+		alimento1 = Prct06::Grupo.new("Frutas","Huevo frito", 0.3, 12.4, 0.4)
+		alimento2 = Prct06::Grupo.new("Frutas","Leche vaca", 1.2, 21.4, 0.2)
+		alimento3 = Prct06::Grupo.new("Frutas","Yogurt", 0.5, 12.7, 0.3)
+		@list.insert([alimento1, alimento2, alimento3])
+		expect(@list.size).to eq(3)
+		expect(@list.head.class).to eq(Node)
+		expect(@list.head.value.class).to eq(Prct06::Grupo)
+	end
+	
 end
