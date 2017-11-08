@@ -21,4 +21,10 @@ class Lista
 		@size -= 1
 	end
 	
+	def shift
+		nuevo = @head.prev
+		@head = nuevo
+		@size -= 1
+	end
+	
 end
