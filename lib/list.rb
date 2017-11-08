@@ -10,9 +10,19 @@ class Lista
 	end
 	
 	def insert(var)
-		antiguo = @head
-		@head = Node.new(var,nil,antiguo)
-		@size += 1
+		if var.instance_of?(Array)
+			var.each do |i|
+				antiguo = @head
+				@head = Node.new(i,nil,antiguo)
+				antiguo.next = @head
+				@size += 1
+			end
+		else
+			antiguo = @head
+			@head = Node.new(var,nil,antiguo)
+			antiguo.next = @head
+			@size += 1
+		end
 	end
 	
 	def pop
