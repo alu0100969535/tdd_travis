@@ -24,5 +24,9 @@ RSpec.describe "List tests" do
 		it "Tiene el método 'size'" do
 			expect(@lista.size).not_to be nil
 		end
+		
+		it "Tiene el método 'pop'" do
+			expect(@lista.pop).not_to be nil
+		end
 	end
 end
