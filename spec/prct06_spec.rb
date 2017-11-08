@@ -84,4 +84,16 @@ RSpec.describe "Test de la clase Grupo < Alimento" do
 	it "iniciando objeto Grupo" do
 		expect(@grupo1.class).to be Prct06::Grupo
 	end	
+	
+	it "Esperamos que el objeto grupo sea de tipo Grupo" do
+		expect(@grupo1.is_a?(Prct06::Grupo)).to be true
+	end
+	
+	it "Esperamos que el objeto grupo sea una instancia de Grupo" do
+		expect(@grupo1.instance_of?(Prct06::Grupo)).to be true
+	end
+	
+	it "Esperamos que la clase grupo tenga superclass como Alimento" do
+		expect(Prct06::Grupo.superclass).to be Prct06::Alimento
+	end
 end
