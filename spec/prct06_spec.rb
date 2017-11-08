@@ -100,4 +100,8 @@ RSpec.describe "Test de la clase Grupo < Alimento" do
 	it "Contiene el alimento correspondiente" do
 		expect(@grupo1.nombre).to eq("Huevo frito") 
 	end
+	
+	it "Tiene el método nombreGrupo" do
+		expect(@grupo1.nombreGrupo).to eq("Huevos, lácteos y Helados")
+	end
 end
