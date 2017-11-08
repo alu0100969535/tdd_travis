@@ -96,4 +96,8 @@ RSpec.describe "Test de la clase Grupo < Alimento" do
 	it "Esperamos que la clase grupo tenga superclass como Alimento" do
 		expect(Prct06::Grupo.superclass).to be Prct06::Alimento
 	end
+	
+	it "Contiene el alimento correspondiente" do
+		expect(@grupo1.nombre).to eq("Huevo frito") 
+	end
 end
