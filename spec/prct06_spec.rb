@@ -2,6 +2,7 @@ require "spec_helper"
 require "prct06"
 require "list"
 
+#Comentario
 
 RSpec.describe "Bundler automatic tests" do
 	it "has a version number" do
@@ -184,4 +185,22 @@ RSpec.describe "Test de las listas de alimentos" do
 		expect(@list.head.value.class).to eq(Prct06::Grupo)
 	end
 	
+end
+
+RSpec.describe "Test de comparable y enumerable" do
+
+	before :each do
+		
+		@alimento1 = Prct06::Alimento.new("Huevo frito", 14.1, 0.0, 19.5)
+		@alimento2 = Prct06::Alimento.new("Manzana", 0.3, 12.8, 0.4)
+		@alimento3 = Prct06::Alimento.new("Huevo frito", 14.1, 0.0, 19.5)
+		
+	end
+	
+	it "Comparable" do
+		expect(@alimento1 > @alimento2).to eq(true)
+		expect(@alimento2 < @alimento3).to eq(true)
+		expect(@alimento1 == @alimento2).to eq(false)
+		expect(@alimento1 == @alimento3).to eq(true)
+	end
 end
