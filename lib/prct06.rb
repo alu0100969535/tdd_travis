@@ -2,7 +2,13 @@ require "prct06/version"
 
 module Prct06
 	class Alimento
+	
+		include Comparable
 		attr_reader :nombre, :proteinas, :glucidos, :lipidos
+		
+		def <=>(other)
+			self.valorEnergetico <=> other.valorEnergetico
+		end
 		
 		def initialize(nombre, proteinas, glucidos, lipidos)
 			@nombre = nombre
