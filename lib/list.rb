@@ -1,8 +1,17 @@
 Node = Struct.new(:value, :next, :prev)
 
 class Lista
+	include Enumerable
+
 	attr_reader :head, :tail, :size
 	
+	def each
+		for i in 0 .. (size - 1)
+			actual = @head
+			yield actual.value
+			actual = actual.prev
+		end
+	end
 	
 	def initialize 
 		@head = nil
