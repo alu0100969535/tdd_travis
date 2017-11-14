@@ -208,6 +208,7 @@ RSpec.describe "Test de comparable y enumerable" do
 		expect(@alimento2 < @alimento3).to eq(true)
 		expect(@alimento1 == @alimento2).to eq(false)
 		expect(@alimento1 == @alimento3).to eq(true)
+		expect(@alimento2.between?(@alimento1,@alimento5)).to eq(false)
 	end
 	
 	context "Enumerable" do
