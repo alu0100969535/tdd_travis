@@ -6,13 +6,13 @@ class Lista
 	attr_reader :head, :tail, :size
 	
 	def each
-		for i in 0 .. (size - 1)
-			actual = @head
+		actual = @tail
+		for i in 0 .. (@size - 1)
 			yield actual.value
-			actual = actual.prev
+			actual = actual.next
 		end
 	end
-	
+ 	
 	def initialize 
 		@head = nil
 		@tail = nil
