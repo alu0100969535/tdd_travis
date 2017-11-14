@@ -64,17 +64,20 @@ RSpec.describe "Test Enumerable mixin" do
 		@alimento7 = nil
 		
 		@lista = Lista.new
-		
+		@lista.insert([@alimento1,@alimento2,@alimento3,@alimento4,@alimento5,@alimento6])
 	end
 	
 	context "Enumerable" do
 		
 		it ".all?" do
 			@lista2 = Lista.new
-			@lista.insert([@alimento1,@alimento2,@alimento3,@alimento5,@alimento6,@alimento7])
-			@lista2.insert([@alimento1,@alimento2,@alimento3,@alimento5,@alimento6])
-			expect(@lista.all?).to eq(false)
-			expect(@lista2.all?).to eq(true)
+			@lista2.insert([@alimento1,@alimento2,@alimento3,@alimento4,@alimento5,@alimento6,@alimento7])
+			expect(@lista.all?).to eq(true)
+			expect(@lista2.all?).to eq(false)
+		end
+		
+		it ".collect" do
+			expect(@lista.collect{|i| "Alimento: " + i.to_s}).to eq(["Alimento: " + @alimento1.to_s, "Alimento: " + @alimento2.to_s,"Alimento: " + @alimento3.to_s,"Alimento: " + @alimento4.to_s,"Alimento: " + @alimento5.to_s,"Alimento: " + @alimento6.to_s])
 		end
 		
 	end	
