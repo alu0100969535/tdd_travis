@@ -15,10 +15,12 @@ RSpec.describe "List tests" do
 		end
 		
 		it "Tiene el método 'head'" do
+			@lista.insert(1)
 			expect(@lista.head).not_to be nil
 		end
 		
 		it "Tiene el método 'tail'" do
+			@lista.insert(1)
 			expect(@lista.tail).not_to be nil
 		end
 		
@@ -27,10 +29,12 @@ RSpec.describe "List tests" do
 		end
 		
 		it "Tiene el método 'pop'" do
+			@lista.insert(1)
 			expect(@lista.pop).not_to be nil
 		end
 		
 		it "Tiene el método 'shift'" do
+			@lista.insert(1)
 			expect(@lista.shift).not_to be nil
 		end
 	end

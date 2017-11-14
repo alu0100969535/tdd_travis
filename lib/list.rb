@@ -3,38 +3,51 @@ Node = Struct.new(:value, :next, :prev)
 class Lista
 	attr_reader :head, :tail, :size
 	
+	
 	def initialize 
-		@head = Node.new(0,nil,nil)
-		@tail = @head
+		@head = nil
+		@tail = nil
 		@size = 0
 	end
 	
 	def insert(var)
 		if var.instance_of?(Array)
 			var.each do |i|
-				antiguo = @head
-				@head = Node.new(i,nil,antiguo)
-				antiguo.next = @head
-				@size += 1
+				ins(i)
 			end
 		else
-			antiguo = @head
-			@head = Node.new(var,nil,antiguo)
-			antiguo.next = @head
-			@size += 1
+			ins(var)
 		end
 	end
 	
+	def ins(val)
+		antiguo = @head
+		@head = Node.new(val,nil,antiguo)
+		if antiguo.nil? == false
+			antiguo.next = @head
+		end
+		if size == 0
+			@tail = @head
+		end 
+		@size += 1
+	end
+	
 	def pop
-		nuevo = @tail.next
-		@tail = nuevo
-		@size -= 1
+		if @tail.nil? == false
+			nuevo = @tail.next
+			@tail = nuevo
+			@size -= 1
+		end
 	end
 	
 	def shift
-		nuevo = @head.prev
-		@head = nuevo
-		@size -= 1
+		if @head.nil? == false
+			nuevo = @head.prev
+			@head = nuevo
+			@size -= 1
+		end
 	end
+	
+	private :ins
 	
 end
