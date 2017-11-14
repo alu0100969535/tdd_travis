@@ -80,6 +80,25 @@ RSpec.describe "Test Enumerable mixin" do
 			expect(@lista.collect{|i| "Alimento: " + i.to_s}).to eq(["Alimento: " + @alimento1.to_s, "Alimento: " + @alimento2.to_s,"Alimento: " + @alimento3.to_s,"Alimento: " + @alimento4.to_s,"Alimento: " + @alimento5.to_s,"Alimento: " + @alimento6.to_s])
 		end
 		
+		it ".detect" do
+			expect(@lista.detect{ |i| i.between?(@alimento2,@alimento6)}).to eq(@alimento1)
+		end
+		
+		it ".select" do
+			expect(@lista.select{ |i| i.between?(@alimento2,@alimento6)}).to eq([@alimento1, @alimento2, @alimento3, @alimento5, @alimento6])
+		end
+		
+		it ".sort" do
+			expect(@lista.sort).to eq([@alimento4, @alimento2, @alimento5, @alimento1, @alimento3, @alimento6])
+		end
+		
+		it ".max" do
+			expect(@lista.max).to eq(@alimento6)
+		end
+		
+		it ".min" do
+			expect(@lista.min).to eq(@alimento4)
+		end
 	end	
 	
 end
