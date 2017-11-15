@@ -19,9 +19,6 @@ Or install it yourself as:
 
     $ gem install prct06
 
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
