@@ -20,9 +20,16 @@ class Alimento
 	
 	def aibc
 		if @datosIg == -1
-			-1
+			return -1
 		else
-			#TODO: Código que calcula el aibc
+			datos = Array.new
+			
+			datosIg.each do |dato|
+				datos <<[]
+				dato.each_cons(2) { |valor| datos.last.push( (valor[1] - dato[0] + valor[0] - dato[0])/2 * 5) }
+			end 
+			
+			datos.map {|x| (x.reduce :+).round(2)}
 		end
 	end
 	
