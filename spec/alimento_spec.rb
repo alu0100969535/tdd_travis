@@ -203,3 +203,15 @@ RSpec.describe "Test de comparable" do
 	end
 	
 end
+
+RSpec.describe "Test indice glucémico" do
+	before :each do
+		@alimento1 = Alimento.new("Compota de Manzana", 0.0, 0.0, 0.0)	#Los valores de glucosa,lipidos y proteínas no importan para esta parte.
+		@alimento2 = Alimento.new("Yogurt", 0.0, 0.0, 0.0)
+		@alimento3 = Alimento.new("Chocolate", 0.0, 0.0, 0.0)
+	end
+	
+	it "Tiene el método aibc" do
+		expect(@alimento1.respond_to?(:aibc)).to eq(true)
+	end
+end
