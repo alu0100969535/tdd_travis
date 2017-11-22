@@ -208,7 +208,7 @@ RSpec.describe "Test indice glucémico" do
 	before :each do
 		@alimento1 = Alimento.new("Compota de Manzana", 0.0, 0.0, 0.0)	#Los valores de glucosa,lipidos y proteínas no importan para esta parte.
 		@alimento2 = Alimento.new("Yogurt", 0.0, 0.0, 0.0)
-		@alimento3 = Alimento.new("Chocolate", 0.0, 0.0, 0.0)
+		@alimento3 = Alimento.new("Glucosa", 0.0, 0.0, 0.0)
 	end
 	
 	it "Tiene el método aibc" do
@@ -225,5 +225,13 @@ RSpec.describe "Test indice glucémico" do
 								[6.3, 5.4, 5.6, 5.7, 6.5, 7.4, 7.9, 7.4, 7.7, 7.9, 7.9, 7.8, 7.8, 7.8, 8.0, 8.5, 9.4, 10.8, 10.5, 9.1, 8.9, 8.3, 7.7, 7.6, 7.5]	#Persona2
 							  ]
 		expect(@alimento1.aibc).not_to eq(-1)
+	end
+	
+	it "El método aibc realiza el cálculo correctamente" do
+		@alimento1.datosIg = [ [6.7, 6.5, 6.8, 6.9, 7.0, 7.1, 6.9, 6.9, 6.9, 6.7, 6.9, 7.3, 7.0, 7.0, 7.2, 7.1, 6.8, 7.2, 7.3, 7.0, 6.8, 6.7, 6.8, 6.7, 6.9],	#Persona1
+								[4.6, 4.8, 5.3, 5.6, 6.1, 6.5, 6.6, 7.0, 7.0, 6.8, 6.4, 6.3, 6.1, 6.1, 6.2, 6.0, 6.1, 6.1, 6.2, 6.3, 6.4, 6.1, 6.1, 5.7, 5.9]	#Persona2
+							  ]
+		expect(@alimento1.aibc).to eq([27.50, 183.25])
+		
 	end
 end
