@@ -1,7 +1,7 @@
 #Tipo de objeto nodo, para el uso en la lista doblemente enlazada.
 Node = Struct.new(:value, :next, :prev)
 
-s
+
 # Esta clase se ha creado para representar listas
 # doblemente enlazada para trabajar con los alimentos.
 class Lista

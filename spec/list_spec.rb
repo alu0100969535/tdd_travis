@@ -1,5 +1,4 @@
-require "list"
-require "prct06.rb"
+require "spec_helper"
 
 RSpec.describe "List tests" do
 	context "Probando los métodos" do
@@ -55,12 +54,12 @@ RSpec.describe "Test Enumerable mixin" do
 
 	before :each do
 		
-		@alimento1 = Prct06::Alimento.new("Huevo frito", 14.1, 0.0, 19.5)
-		@alimento2 = Prct06::Alimento.new("Manzana", 0.3, 12.8, 0.4)
-		@alimento3 = Prct06::Alimento.new("Huevo frito", 14.1, 0.0, 19.5)
-		@alimento4 = Prct06::Alimento.new("Cebolla", 1.3, 5.8, 0.3)
-		@alimento5 = Prct06::Alimento.new("Papas", 2.0, 15.4, 0.1)
-		@alimento6 = Prct06::Alimento.new("Lentejas", 23.5, 52.0, 1.4)
+		@alimento1 = Alimento.new("Huevo frito", 14.1, 0.0, 19.5)
+		@alimento2 = Alimento.new("Manzana", 0.3, 12.8, 0.4)
+		@alimento3 = Alimento.new("Huevo frito", 14.1, 0.0, 19.5)
+		@alimento4 = Alimento.new("Cebolla", 1.3, 5.8, 0.3)
+		@alimento5 = Alimento.new("Papas", 2.0, 15.4, 0.1)
+		@alimento6 = Alimento.new("Lentejas", 23.5, 52.0, 1.4)
 		@alimento7 = nil
 		
 		@lista = Lista.new
