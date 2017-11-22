@@ -218,4 +218,12 @@ RSpec.describe "Test indice glucémico" do
 	it "Tiene el atributo datosIG" do
 		expect(@alimento1.respond_to?(:datosIg)).to eq(true)
 	end
+	
+	it "AIBC devuelve -1 en caso de no definir datosIG antes de ejecutarla" do
+		expect(@alimento1.aibc).to eq(-1)
+		@alimento1.datosIg = [ 	[4.9, 5.3, 5.9, 6.7, 7.2, 7.6, 8.0, 8.2, 8.2, 8.4, 8.3, 8.3, 8.0, 7.5, 7.1, 6.8, 6.8, 6.9, 6.8, 6.3, 6.2, 6.3, 6.2, 6.3, 6.1],	#Persona1
+								[6.3, 5.4, 5.6, 5.7, 6.5, 7.4, 7.9, 7.4, 7.7, 7.9, 7.9, 7.8, 7.8, 7.8, 8.0, 8.5, 9.4, 10.8, 10.5, 9.1, 8.9, 8.3, 7.7, 7.6, 7.5]	#Persona2
+							  ]
+		expect(@alimento1.aibc).not_to eq(-1)
+	end
 end
