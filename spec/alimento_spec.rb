@@ -214,4 +214,8 @@ RSpec.describe "Test indice glucémico" do
 	it "Tiene el método aibc" do
 		expect(@alimento1.respond_to?(:aibc)).to eq(true)
 	end
+	
+	it "Tiene el atributo datosIG" do
+		expect(@alimento1.respond_to?(:datosIg)).to eq(true)
+	end
 end
