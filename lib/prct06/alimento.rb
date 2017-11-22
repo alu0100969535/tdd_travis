@@ -4,6 +4,7 @@ class Alimento
 
 	include Comparable
 	attr_reader :nombre, :proteinas, :glucidos, :lipidos
+	attr_accessor :datosIg
 	#Método necesario para el mixin Comparable
 	def <=>(other)
 		self.valorEnergetico <=> other.valorEnergetico
@@ -14,6 +15,7 @@ class Alimento
 		@proteinas = proteinas
 		@glucidos = glucidos
 		@lipidos = lipidos
+		@datosIg = -1
 	end
 	
 	def aibc
