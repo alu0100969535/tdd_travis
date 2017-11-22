@@ -15,6 +15,11 @@ class Alimento
 		@glucidos = glucidos
 		@lipidos = lipidos
 	end
+	
+	def aibc
+	
+	end
+	
 	#Método que calcula el valor energético del alimentos
 	# @return [FixNum] , el valor enegético del alimento
 	def valorEnergetico()
