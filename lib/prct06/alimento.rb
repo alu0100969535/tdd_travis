@@ -19,7 +19,11 @@ class Alimento
 	end
 	
 	def aibc
-	
+		if @datosIg == -1
+			-1
+		else
+			#TODO: Código que calcula el aibc
+		end
 	end
 	
 	#Método que calcula el valor energético del alimentos
