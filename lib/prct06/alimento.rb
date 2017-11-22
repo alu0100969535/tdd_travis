@@ -17,7 +17,9 @@ class Alimento
 		@lipidos = lipidos
 		@datosIg = -1
 	end
-	
+	#Método qe calcula el área incremental bajo la curva (AIBC), necesario para el cálculo del índice glucémico
+	#@return [Array] Si no hay error, devuelve un array (posición por persona) con su AIBC individual para este alimento
+	#@return [FixNum] Devuelve -1 en caso de error
 	def aibc
 		if @datosIg == -1
 			return -1
@@ -34,7 +36,7 @@ class Alimento
 	end
 	
 	#Método que calcula el valor energético del alimentos
-	# @return [FixNum] , el valor enegético del alimento
+	# @return [FixNum] el valor enegético del alimento
 	def valorEnergetico()
 		@proteinas*4 + @glucidos*4 + @lipidos*9
 	end
