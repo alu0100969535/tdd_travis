@@ -1,6 +1,7 @@
 require "prct06/version"
 require "prct06/alimento"
 require "prct06/list"
+require "prct06/array"
 
 # encoding: utf-8
 # Este módulo se ha creado para la representación
