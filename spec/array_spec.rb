@@ -1,4 +1,6 @@
 require "spec_helper"
+require 'benchmark'
+include Benchmark
 
 RSpec.describe "Benchmark de ordenación" do
 	before :each do
@@ -78,5 +80,15 @@ RSpec.describe "Benchmark de ordenación" do
 									Grupo.new("Alimentos grasos","Chocolate", 5.3, 47.0, 30.0),
 									Grupo.new("Alimentos grasos","Mantequilla", 0.7, 0.0, 83.2),
 									Grupo.new("Alimentos grasos","Aceite de oliva", 0.0, 0.2, 99.6)])
+	end
+	
+	it "Comparando los métodos de ordenación" do
+		
+		Benchmark.benchmark(CAPTION, 7, FORMAT, "-total:", "-avg:") do |x|
+                        tf = x.report("For:")   { @tabla.bubbleSortFor }
+                        tt = x.report("Each:") { @tabla.bubbleSortEach }
+                        tu = x.report("Sort:")  { @tabla.sort }
+                        [tf+tt+tu, (tf+tt+tu)/3]
+                    end
 	end
 end
