@@ -1,4 +1,8 @@
+#Clase predefinida en Ruby
 class Array
+
+	#Método que ordena el array mediante sentencias for
+	#@return [Array] Nuevo array ordenado
 	def bubbleSortFor
 		n = self.length
 		resultado = self
@@ -15,6 +19,8 @@ class Array
 		return resultado
 	end
 	
+	#Método que ordena el array mediante sentencias each
+	#@return [Array] Nuevo array ordenado
 	def bubbleSortEach
 		resultado = Array.new
         resultado << self[0]
