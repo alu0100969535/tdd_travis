@@ -1,5 +1,5 @@
 # Práctica 6 LPP
-## Felipe Álvarez Avaria
+## Felipe Álvarez Avaria 
 
 Esta gema para Ruby trata de calcular el valor energético de los alimentos.
 
